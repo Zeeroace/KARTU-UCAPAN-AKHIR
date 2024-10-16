@@ -1,0 +1,97 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <title>Pesan Dariku Untukmu</title>
+    <script src="https://dekatutorial.github.io/drk/s.js"></script>
+    <link rel="stylesheet" href="https://dekatutorial.github.io/drk/s.css" />
+    <style>
+        .bottom-left {
+            position: absolute;
+            bottom: -35px; /* Adjust as needed */
+            left: 520px;   /* Adjust as needed */
+            width: 200px; /* Adjust size as needed */
+            height: auto; /* Maintain aspect ratio */
+        }
+        .paper {
+            position: relative; /* Ensure paper-content can position children */
+        }
+    </style>
+</head>
+<body>
+    <div class="bg"></div>
+
+    <div class="content animate__animated animate__bounceInDown">
+        <div class="card">
+            <div>
+                <h3>Penasaran yaa?</h3>
+            </div>
+            <img class="surat" src="https://dekatutorial.github.io/spesial_mail.png" alt="MAIL" />
+            <p>Tekan untuk membuka</p>
+        </div>
+    </div>
+    <div class="content2">
+        <div class="paper animate__animated animate__bounceIn" id="content2">
+            <div class="paper-content">
+                <textarea class="pesan" disabled></textarea>
+                <a href="https://wa.link/2w7lvj" target="_blank">
+                    <img class="bottom-left animate__animated animate__bounceIn" src="Kirim pesan donk!!!.png" alt="ayam" />
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Tetapkan ucapan surat seperti semula
+        var musik = "music cut.mp3";
+        var background = "Baground.jpg";
+        var ucapanSurat = 
+        `Happy birthday achaa, behh dah 17 tahun aja nich, nanti kalo udah jadi KTP-nya aku mau pinjam buat pinjol boleh ga? wkwkwk, nek ga lucu yaudah la ya.
+Ini special letters for u, aku gtw mau nulis apa, penting tulis aja. Maap ya kalo kata-katanya aneh, semoga betah bacanya.
+
+- About cacaa..
+Aku pengen menceritakan kamu dimataku sih, pas awal-awal masuk belum kenal kamu samsek (kan lagi awal-awal), terus aku kan orangnya pelupa nah robet sama yang lain itu gtw kalo ditanyain, nah kan kamu anaknya rajin, yaudah kutanyain ajaa :]. Nah dari itu aku mulai sering chat kamu buat tanya tugas eheheh :0.
+Setelah itu kan kita ketemu pas drongkek, nah waktu itu aku nganterin kamu pulang gada maksud apa-apa sih, jadi yaudah tak anterin karena kamu juga takut waktu itu. Dari itu gtw yaa mungkin takdir yang memperdekat kita (azekk) atau gimana ak gtw wkwkwkw.
+Jujur aja emang pas semester 1 dan 2 aku emang ngejer rank 1 sih, maklum la di SMP pernah rank 27/32, beh waktu itu mamaku kecewa berat. Yaudah aku ngambis di SMA tapi kalah dua kali sama kamu, yaudalah ya belum rezeki wkwkwk. Emang achaa anak pintar. Hebat hebat (Bpk Budi pasti bangga).
+Menurutku kamu tuh beda sama cewek lain, kek cewek lain tuh mikirin pacaran terus sedangkan kamu fokus masa depan, dan kamu tuh menurutku anak yang mandiri. Buktinya pas LDK kamu memanfaatkan skill menulismu untuk mencari cuan, I really like ur mind :3. Selain itu, kamu juga perhatian orangnya walaupun gengsinya setinggi langit -_-. Kamu juga termasuk orang yang sabar ya, aku tuh orangnya ngeselinnya minta ampun, sampe mamaku tiap hari marah-marah. Tapi kamu kuat menghadapi orang senyebelin ini 😊.
+Terkadang pemikiranmu tidak rasional seperti pengen jadi kodok dll, emang kamu mau beneran jadi kodok apa gimana? Aku gtw, dah ya sekian dari aku, mohon maklum tulisannya jelek karena aku penulis amatir.
+
+- Birthday wishes!!
+Diumurmu yang 17 tahun ini, semoga kamu lebih baik, lebih dewasa, lebih rasional (pokoknya lebih yang baik-baik). Oiya semoga tinggi badanmu yang bertambah ya, bukan gengsimu wkwkwkw. Aku doakan semua keinginanmu (yang baik) terkabul ya, kalau keinginan jadi kodok gausah terkabul, dah jadi manusia aja gausah jadi kodok. Selanjutnya doa sendiri dan jangan lupa minta doa serta restu orang tua dalam setiap keputusanmu.
+I am so proud of you, my little girl!`;
+        var pesanWhatsapp = "PESAN WHATSAPP";
+
+        // Panggil fungsi untuk menjalankan animasi teks
+        DekaTutorial(musik, background, ucapanSurat, pesanWhatsapp);
+
+        // Tambahkan kode untuk mempercepat animasi teks
+        // Menargetkan textarea tempat teks akan muncul
+        var textarea = document.querySelector('.pesan');
+
+        // Fungsi untuk mempercepat animasi teks
+        function animateText(text, speed) {
+            let i = 0;
+            textarea.value = ""; // Kosongkan textarea
+            function type() {
+                if (i < text.length) {
+                    textarea.value += text.charAt(i);
+                    i++;
+                    setTimeout(type, speed);
+                }
+            }
+            type();
+        }
+
+        // Kecepatan lebih cepat 3x (biasanya 150ms, sekarang 50ms)
+        var speed = 50;
+
+        // Panggil fungsi animasi teks dengan ucapanSurat yang lebih cepat
+        animateText(ucapanSurat, speed);
+    </script>
+</body>
+</html>
